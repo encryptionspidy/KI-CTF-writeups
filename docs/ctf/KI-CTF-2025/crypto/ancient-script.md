@@ -233,8 +233,8 @@ for m in re.finditer(
 items.sort(key=lambda t: (-t[1], t[0]))
 decoded = ''.join(SYMBOL_MAP.get(img_id, '?') for _, _, img_id in items)
 print(f"Decoded: {decoded}")
-print(f"Flag: KICTF{{whiskersandwings}}")
 ```
+{%raw%}`print(f"Flag: KICTF{{whiskersandwings}}")`{%endraw%}
 
 ---
 

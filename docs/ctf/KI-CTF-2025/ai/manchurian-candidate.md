@@ -198,7 +198,7 @@ for pair in pp:
     if pn[pair] == 0 and pp[pair] >= 20:
         a, b = pair
         if wp[a] and wn[a] and wp[b] and wn[b]:
-            print(f"[+] KICTF{{{a}_{b}}}")
+            print(f"[+] KICTF{a}_{b}")
             break
 ```
 
