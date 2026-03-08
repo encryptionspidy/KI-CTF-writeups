@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% seo %}
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="{{ '/' | relative_url }}" class="nav-brand">KI-CTF-2025</a>
+    {% for item in site.nav %}
+      <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
+    {% endfor %}
+  </nav>
+
+  <div class="wrapper">
+    {{ content }}
+  </div>
+
+  <a href="#" class="back-to-top" title="Back to top">↑</a>
+
+  <script>
+    // Simple client-side search
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchBox = document.querySelector('.search-box');
+      if (searchBox) {
+        searchBox.addEventListener('input', function(e) {
+          const query = e.target.value.toLowerCase();
+          document.querySelectorAll('.challenge-card').forEach(function(card) {
+            const text = card.textContent.toLowerCase();
+            card.style.display = text.includes(query) ? '' : 'none';
+          });
+        });
+      }
+      // Tag filtering
+      document.querySelectorAll('.tag').forEach(function(tag) {
+        tag.addEventListener('click', function() {
+          const cat = this.dataset.category;
+          document.querySelectorAll('.challenge-card').forEach(function(card) {
+            if (!cat || card.dataset.category === cat) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+title: "KI CTF 2025 Writeups"
+description: "Competition-level CTF writeups — technical, reproducible, educational"
+baseurl: "/KI-CTF-writeups"
+url: "https://encryptionspidy.github.io"
+
+remote_theme: pages-themes/hacker@v0.2.0
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+highlighter: rouge
+
+# Build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+include:
+  - _pages
+
+# Collections
+collections:
+  writeups:
+    output: true
+    permalink: /ctf/:path/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: "ctf/KI-CTF-2025/web"
+    values:
+      category: "Web"
+      layout: "writeup"
+  - scope:
+      path: "ctf/KI-CTF-2025/crypto"
+    values:
+      category: "Crypto"
+      layout: "writeup"
+  - scope:
+      path: "ctf/KI-CTF-2025/forensics"
+    values:
+      category: "Forensics"
+      layout: "writeup"
+  - scope:
+      path: "ctf/KI-CTF-2025/rev"
+    values:
+      category: "Reverse Engineering"
+      layout: "writeup"
+  - scope:
+      path: "ctf/KI-CTF-2025/pwn"
+    values:
+      category: "PWN"
+      layout: "writeup"
+  - scope:
+      path: "ctf/KI-CTF-2025/ai"
+    values:
+      category: "AI"
+      layout: "writeup"
+  - scope:
+      path: "ctf/KI-CTF-2025/android"
+    values:
+      category: "Android"
+      layout: "writeup"
+  - scope:
+      path: "ctf/KI-CTF-2025/misc"
+    values:
+      category: "Misc"
+      layout: "writeup"
+
+# Navigation
+nav:
+  - title: "Home"
+    url: "/"
+  - title: "Web"
+    url: "/ctf/KI-CTF-2025/web/"
+  - title: "Crypto"
+    url: "/ctf/KI-CTF-2025/crypto/"
+  - title: "Forensics"
+    url: "/ctf/KI-CTF-2025/forensics/"
+  - title: "Rev"
+    url: "/ctf/KI-CTF-2025/rev/"
+  - title: "PWN"
+    url: "/ctf/KI-CTF-2025/pwn/"
+  - title: "AI"
+    url: "/ctf/KI-CTF-2025/ai/"
+  - title: "Android"
+    url: "/ctf/KI-CTF-2025/android/"
+  - title: "Misc"
+    url: "/ctf/KI-CTF-2025/misc/"

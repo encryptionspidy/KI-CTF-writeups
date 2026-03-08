@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<article class="writeup">
+  <div class="writeup-meta">
+    <div>
+      <dt>Challenge</dt>
+      <dd>{{ page.challenge }}</dd>
+    </div>
+    <div>
+      <dt>Category</dt>
+      <dd>{{ page.category }}</dd>
+    </div>
+    <div>
+      <dt>Difficulty</dt>
+      <dd>{{ page.difficulty | default: "—" }}</dd>
+    </div>
+    <div>
+      <dt>Tags</dt>
+      <dd>{% for tag in page.tags %}<span class="tag">{{ tag }}</span> {% endfor %}</dd>
+    </div>
+  </div>
+
+  {{ content }}
+
+  <hr>
+  <p style="text-align:center; color: var(--text-muted); font-size: 0.8rem;">
+    <a href="{{ site.baseurl }}/ctf/KI-CTF-2025/{{ page.category | downcase | replace: ' ', '-' | replace: 'reverse engineering', 'rev' }}/">← Back to {{ page.category }}</a>
+    &nbsp;|&nbsp;
+    <a href="{{ site.baseurl }}/">Home</a>
+  </p>
+</article>
